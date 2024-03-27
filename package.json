@@ -10,16 +10,30 @@
   "author": "TLA_WEB_TEAM_2024",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.2",
     "express": "^4.18.2",
+    "gridfile": "^1.1.4",
+    "gridfs-stream": "^1.1.1",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.0",
+    "mongoose-gridfs": "1.2.42",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
     "mysql2": "^3.9.1",
     "nodemon": "^3.0.3",
     "sequelize": "^6.37.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "tedious": "^16.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/gridfs-stream": "^0.5.39",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.11.27"
   }
 }

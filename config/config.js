@@ -16,5 +16,5 @@ module.exports = {
   port: PORT,
   url: HOST_URL,
   host: HOST,
-  mongodbUri: MONGODB_URI,
+  mongodbUri: MONGODB_URI
 };
