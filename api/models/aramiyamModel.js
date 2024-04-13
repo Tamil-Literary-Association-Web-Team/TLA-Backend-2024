@@ -2,15 +2,11 @@
 const mongoose = require("mongoose");
 
 const aramiyamSchema = new mongoose.Schema({
-  heading: {
+  title: {
     type: String,
     required: true,
   },
   description: {
-    type: String,
-    required: true,
-  },
-  category: {
     type: String,
     required: true,
   },
@@ -23,17 +19,23 @@ const aramiyamSchema = new mongoose.Schema({
     required: true,
   },
   speaker: {
+    name: {
+      type: String,
+      required: true,
+    },
+    position: {
+      type: String,
+      required: true,
+    },
+    profileImg: {
+      type: String,
+      required: true,
+    }
+  },
+  youtubeLink: {
     type: String,
     required: true,
-  },
-  qualification: {
-    type: String,
-    required: true,
-  },
-  speakerDetails: {
-    type: String,
-    required: true,
-  },
+  }
 });
 
 const Aramiyam = mongoose.model("Aramiyam", aramiyamSchema);
