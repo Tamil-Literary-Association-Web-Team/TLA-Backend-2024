@@ -12,6 +12,7 @@ const userRoutes = require("./api/routes/userRoutes");
 const sharedMemoryRoutes = require("./api/routes/sharedMemoryRoutes");
 const sotkanaiRoutes = require("./api/routes/sotkanaiRoutes");
 const ideathonRoutes = require("./api/routes/ideathonRoutes");
+const bookRoutes = require("./api/routes/bookRoutes");
 
 const app = express();
 
@@ -39,5 +40,6 @@ app.use("/users", userRoutes);
 app.use("/shared-memories", sharedMemoryRoutes)
 app.use("/sotkanais", sotkanaiRoutes);
 app.use("/ideathon", ideathonRoutes);
+app.use("/books", bookRoutes);
 
 module.exports = app;
