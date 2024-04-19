@@ -12,20 +12,19 @@ const userRoutes = require("./api/routes/userRoutes");
 const sharedMemoryRoutes = require("./api/routes/sharedMemoryRoutes");
 const sotkanaiRoutes = require("./api/routes/sotkanaiRoutes");
 const ideathonRoutes = require("./api/routes/ideathonRoutes");
+const ideathonRuleRoutes = require("./api/routes/ideathonRuleRoutes");
 const bookRoutes = require("./api/routes/bookRoutes");
 
 const app = express();
+// const path = require('path');
 
-// console.log(swaggerSpec);
-// Enable CORS for all origins during development
-app.use(cors({
-	origin: true,
-	credentials: true
-}));
-
-app.use(cookieParser());
 // Parse JSON requests
-app.use(express.json());
+// app.use(express.json());
+
+// app.use(express.static(path.join(__dirname, '/build')));
+// app.get('/*', (req, res) => {
+//     res.sendFile(path.join(__dirname + '/build/index.html'));
+// });
 
 // Parse URL-encoded requests
 app.use(express.urlencoded({ extended: true }));
@@ -40,6 +39,7 @@ app.use("/users", userRoutes);
 app.use("/shared-memories", sharedMemoryRoutes)
 app.use("/sotkanais", sotkanaiRoutes);
 app.use("/ideathon", ideathonRoutes);
+app.use("/ideathon-rules", ideathonRuleRoutes);
 app.use("/books", bookRoutes);
 
 module.exports = app;
