@@ -1,5 +1,3 @@
-
-
 "use strict";
 const http = require("http");
 const app = require("./app");
@@ -10,7 +8,7 @@ const server = http.createServer(app);
 
 // Start the server after successfully connecting to MongoDB
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(`Server running at http://localhost:${port}/api/`);
 });
 
 // Handle server errors

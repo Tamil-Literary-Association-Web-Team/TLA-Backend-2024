@@ -16,30 +16,35 @@ const ideathonRuleRoutes = require("./api/routes/ideathonRuleRoutes");
 const bookRoutes = require("./api/routes/bookRoutes");
 
 const app = express();
-// const path = require('path');
+const path = require('path');
+// const buildPath = require("../TLA-Backend-2024/build");
 
-// Parse JSON requests
-// app.use(express.json());
-
-// app.use(express.static(path.join(__dirname, '/build')));
-// app.get('/*', (req, res) => {
-//     res.sendFile(path.join(__dirname + '/build/index.html'));
-// });
+//Parse JSON requests
+app.use(express.json());
 
 // Parse URL-encoded requests
 app.use(express.urlencoded({ extended: true }));
 
+// app.get('/', (req, res) => {
+//     res.send('TLA UOM')
+//   })
+
 // Routes
-app.use("/contacts", contactRoutes);
-app.use("/aramiyams", aramiyamRoutes);
-app.use("/districts", districtRoutes);
-app.use("/schools", schoolRoutes);
-app.use("/brammams", brammamRoutes);
-app.use("/users", userRoutes);
-app.use("/shared-memories", sharedMemoryRoutes)
-app.use("/sotkanais", sotkanaiRoutes);
-app.use("/ideathon", ideathonRoutes);
-app.use("/ideathon-rules", ideathonRuleRoutes);
-app.use("/books", bookRoutes);
+app.use("/api/contacts", contactRoutes);
+app.use("/api/aramiyams", aramiyamRoutes);
+app.use("/api/districts", districtRoutes);
+app.use("/api/schools", schoolRoutes);
+app.use("/api/brammams", brammamRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/shared-memories", sharedMemoryRoutes)
+app.use("/api/sotkanais", sotkanaiRoutes);
+app.use("/api/ideathon", ideathonRoutes);
+app.use("/api/ideathon-rules", ideathonRuleRoutes);
+app.use("/api/books", bookRoutes);
+
+app.use(express.static(path.join(__dirname, '/build')));
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+});
 
 module.exports = app;
