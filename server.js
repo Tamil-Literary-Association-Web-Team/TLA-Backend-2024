@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 // Start the server after successfully connecting to MongoDB
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/api/`);
+  console.log(`Server running at http://localhost:${port}`);
 });
 
 // Handle server errors
