@@ -13,6 +13,7 @@ const brammamController = {
 
   createBrammam: async (req, res, next) => {
     try {
+      console.log("Creating");
       const newBrammam = await Brammam.create(req.body);
       res.status(201).json(newBrammam);
     } catch (error) {
@@ -58,6 +59,21 @@ const brammamController = {
     try {
       const id = req.params.brammamId;
       const brammam = await Brammam.findById(id);
+      if (brammam) {
+        res.status(200).json(brammam);
+      } else {
+        res.status(404).json({ message: "Brammam not found" });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
+  getBrammamByCategory: async (req, res, next) => {
+    try {
+      const category = req.params.category;
+      const brammam = await Brammam.find({ nameEnglish: category });
       if (brammam) {
         res.status(200).json(brammam);
       } else {

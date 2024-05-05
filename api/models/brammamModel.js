@@ -2,36 +2,50 @@
 const mongoose = require("mongoose");
 
 const brammamSchema = new mongoose.Schema({
-  category: {
+  nameEnglish: {
     type: String,
     required: true,
   },
-  heading1: {
-    type: String,
-    required: true,
-  },
-  heading2: {
-    type: String,
-    required: true,
-  },
-  heading3: {
+  nameTamil: {
     type: String,
     required: true,
   },
   deadline: {
+    type: Date,
+    required: true,
+  },
+  description: {
     type: String,
     required: true,
   },
-  qRlink: {
-    type: String,
-  },
-  priceK1: {
-    type: String,
+  showWinners: {
+    type: Boolean,
     required: true,
   },
-  priceS2: {
-    type: String,
+  showCompetitionDetails: {
+    type: Boolean,
     required: true,
+  },
+  themes: [
+    {
+      type: String,
+    },
+  ],
+  rules: [
+    {
+      type: String,
+    },
+  ],
+  prize: [
+    {
+      type: Object,
+    },
+  ],
+  winner1: {
+    type: String,
+  },
+  winner2: {
+    type: String,
   },
 });
 
