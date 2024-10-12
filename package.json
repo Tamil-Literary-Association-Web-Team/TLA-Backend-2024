@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.2",
     "express": "^4.18.2",
+    "express-rate-limit": "^7.4.1",
     "gridfile": "^1.1.4",
     "gridfs-stream": "^1.1.1",
     "mongodb": "^6.4.0",

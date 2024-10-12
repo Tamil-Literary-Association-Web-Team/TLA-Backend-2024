@@ -14,6 +14,7 @@ const sotkanaiRoutes = require("./api/routes/sotkanaiRoutes");
 const ideathonRoutes = require("./api/routes/ideathonRoutes");
 const ideathonRuleRoutes = require("./api/routes/ideathonRuleRoutes");
 const bookRoutes = require("./api/routes/bookRoutes");
+const makkalMantramQuestionRoutes = require("./api/routes/makkalMantramQuestionRoutes");
 
 const app = express();
 const path = require("path");
@@ -58,6 +59,7 @@ app.use("/api/sotkanais", sotkanaiRoutes);
 app.use("/api/ideathon", ideathonRoutes);
 app.use("/api/ideathon-rules", ideathonRuleRoutes);
 app.use("/api/books", bookRoutes);
+app.use("/api/makkal-mantram", makkalMantramQuestionRoutes);
 
 // app.use(express.static(path.join(__dirname, "/build")));
 // app.get("/*", (req, res) => {
