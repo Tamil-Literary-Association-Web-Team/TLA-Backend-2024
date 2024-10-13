@@ -2,10 +2,10 @@
 const mongoose = require("mongoose");
 
 const makkalMantramQuestionVoteSchema = new mongoose.Schema({
-  ip: {
-    type: String,
-    required: true,
-  },
+  // ip: {
+  //   type: String,
+  //   required: true,
+  // },
   answer: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
