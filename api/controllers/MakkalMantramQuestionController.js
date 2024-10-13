@@ -76,7 +76,7 @@ const makkalMantramQuestionController = {
         return res.status(404).json({ error: "Question not found" });
       }
       // check if the question is already closed
-      console.log(question);
+      // console.log(question);
       if (question.status !== "2") {
         return res
           .status(400)
@@ -86,7 +86,7 @@ const makkalMantramQuestionController = {
 
       // Save answer
       const newVote = new MakkalMantramQuestionVote({
-        ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+        // ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress || "",
         answer: answerid,
       });
       const savedVote = await newVote.save();

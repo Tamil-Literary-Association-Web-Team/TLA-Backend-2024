@@ -5,15 +5,15 @@ const makkalMantramQuestionController = require("../controllers/MakkalMantramQue
 const rateLimit = require("express-rate-limit");
 
 // RateLimit Middleware
-const otpRateLimiter = rateLimit({
+const voteRateLimiter = rateLimit({
   windowMs: 2260 * 60 * 1000,
   max: 1,
-  message: { message: "Already Voted !" },
+  message: { message: "நீங்கள் ஏற்கனவே வாக்களித்துள்ளீர்கள்!" },
 });
 
 router.post(
   "/addvote",
-  otpRateLimiter,
+  voteRateLimiter,
   makkalMantramQuestionController.addVote
 );
 
